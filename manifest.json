@@ -1,0 +1,20 @@
+{
+  "name": "New extension with popup",
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "description": "Clicking extension button generate a popup",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "./save.png"
+  },
+  "permissions": ["tabs", "storage", "activeTab"]
+}
